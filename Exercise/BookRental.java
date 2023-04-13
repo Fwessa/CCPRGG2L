@@ -2,147 +2,94 @@
 // INF224
 
 import java.util.*;
-import java.io.*;
 
 public class BookRental {
+    public static void main(String[] args) {
 
-    // Number of Copies
+        // Book Selection and Copies
+        int[] selected = {0, 1, 2};
+        int book0 = 2; // Book 0 Sytem Analysis and Design, Gary B. Shelly
+        int book1 = 3; // Book 1 Android Application, Corinne Hoisington
+        int book2 = 4; // Book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
 
-    	static int book0_Copy = 2; // Book 0 Sytem Analysis and Design, Gary B. Shelly
-	static int book1_Copy = 3; // Book 1 Android Application, Corinne Hoisingto
-	static int book2_Copy = 4; // Book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
-	
-    // Main
-	public static void main(String[] args) {
-	    runMethod();
-	    
-	}
-	
-    // Runner
-	public static void runMethod() {
-		
-       		System.out.println("");
-		System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
-		System.out.println("*****************************");
-		System.out.println("0 Sytem Analysis and Design, Gary B. Shelly");
-		System.out.println("1 Android Application, Corinne Hoisington");
-		System.out.println("2 Programming Concepts and Logic Formulation, Rosauro E. Manuel");
-		System.out.println("*****************************");
-		System.out.println("CHOOSE A NUMBER TO RENT YOUR FAVOURITE BOOK");
-		
-      // Scanner
-		Scanner scan = new Scanner(System.in);  
-		int bookNum = scan.nextInt();
-		askBook(bookNum); // runs askBook()
-		
-		
-	}
-	
-	public static void askBook(int bookNum) {
-		
-        try {
+        while (true) {
+            System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
+            System.out.println("*****************************");
+            System.out.println("0 Sytem Analysis and Design, Gary B. Shelly");
+            System.out.println("1 Android Application, Corinne Hoisington");
+            System.out.println("2 Programming Concepts and Logic Formulation, Rosauro E. Manuel");
+            System.out.println("*****************************");
+            System.out.println("CHOOSE A NUMBER TO RENT YOUR FAVOURITE BOOK");
 
-		int x = bookNum;
-		String[] books = {"Sytem Analysis and Design, Gary B. Shelly", "Android Application, Corinne Hoisington", "Programming Concepts and Logic Formulation, Rosauro E. Manuel" };
-	
-				
-			
-            for (int index = 0; index < books.length; index++) {
-                
-                // book 0 Sytem Analysis and Design, Gary B. Shelly
-                if(books[x].equals("Sytem Analysis and Design, Gary B. Shelly" ) ) {
-				
-                    if(book0_Copy !=0) {
-                            
-                        book0_Copy -=1; 
-                        System.out.println("You Rented Sytem Analysis and Design, Gary B. Shelly");
-                        System.out.println("Rent Again? Y/N");
-                        Scanner scan = new Scanner(System.in);  
-                        String answer = scan.next();
-                        stop_Or_Continue(answer); // runs stop_Or_Continue()
-                    }
-                    
-                    else{
-                        System.out.println("");
-                        System.out.println("No Copies Available");
-                        System.out.println("Rent Again? Y/N");
-                        Scanner scan = new Scanner(System.in);  
-                        String answer = scan.next();
-                        stop_Or_Continue(answer);// runs stop_Or_Continue()
-                        
-                    }
-                    
-                    
-                // book 1 Android Application, Corinne Hoisington
-		    if(books[x].equals("Android Application, Corinne Hoisington")) {
+            Scanner scan = new Scanner(System.in);
+            int book = scan.nextInt();
 
-			if(book1_Copy !=0) {
-			    book1_Copy -=1; 
-			    System.out.println("");
-			    System.out.println("You Rented Sytem Analysis and Design, Gary B. Shelly");
-			    System.out.println("Rent Again? Y/N");
-			    Scanner scan = new Scanner(System.in);  
-			    String answer = scan.next();
-			    stop_Or_Continue(answer);// runs stop_Or_Continue()
-			}
+            try {
+                String[] booksSelection = {"System Analysis and Design, Gary B. Shelly", "Android Application, Corinne Hoisington", "Programming Concepts and Logic Formulation, Rosauro E. Manuel"};
+                Boolean rentedSuccessfully = false;
 
-			else{
+                // Match and Select Books to rent
+                if (book >= 0 && book <= selected.length) {
+                    int bookIndex = book;
 
-			    System.out.println("");
-			    System.out.println("No Copies Available");
-			    System.out.println("Rent Again? Y/N");
-			    Scanner scan = new Scanner(System.in);  
-			    String answer = scan.next();
-			    stop_Or_Continue(answer);// runs stop_Or_Continue()
+                    if (selected[bookIndex] >= 0 && selected[bookIndex] <= 2 ) {
 
-			}
-		    }
-
-                    // book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
-                    if(books[x].equals("Programming Concepts and Logic Formulation, Rosauro E. Manuel")) {
-                        
-                        if(book2_Copy !=0) {
-                            book2_Copy -=1; 
-                            System.out.println("");
-                            System.out.println("You Rented Programming Concepts and Logic Formulation, Rosauro E. Manuel");
-                            System.out.println("Rent Again? Y/N");
-                            Scanner scan = new Scanner(System.in);  
-                            String answer = scan.next();
-                            stop_Or_Continue(answer);// runs stop_Or_Continue()
+                        // Rent the book and update selected array and copies
+                        selected[bookIndex]--; 
+                        if (bookIndex == 0) {
+                            book0--;
+                            if (book0 <= 0) {
+                                System.out.println("No copies available");
+                            }else{
+                                rentedSuccessfully = true;
+                            }
+                        } else if (bookIndex == 1) {
+                            book1--;
+                            if (book1 <= 0) {
+                                System.out.println("No copies available");
+                            }else{
+                                rentedSuccessfully = true;
+                            }
+                        } else if (bookIndex == 2) {
+                            book2--;
+                            if (book2 <= 0) {
+                                System.out.println("No copies available");
+                            }else{
+                                rentedSuccessfully = true;
+                            }
                         }
-                        
-                        else{
-                            System.out.println("");
-                            System.out.println("No Copies Available");
-                            System.out.println("Rent Again? Y/N");
-                            Scanner scan = new Scanner(System.in);  
-                            String answer = scan.next();
-                            stop_Or_Continue(answer);// runs stop_Or_Continue()
-                            
-                        }
+                       
                     }
+                    if (rentedSuccessfully) {
+                        System.out.println("You Rented " + booksSelection[bookIndex]);
+                    }
+                } else{
+                    System.out.println("INDEX DOES NOT EXIST, Try Again!");
+                    System.exit(0);
                 }
+            
+                // Check if the user wants to proceed renting or to stop
+                System.out.println("Rent Again? Y/N");
+                Scanner scan1 = new Scanner(System.in);
+                String answer = scan1.next();
+                stop_Or_Continue(answer);
+
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("INDEX DOES NOT EXIST, Try Again!");
+                System.exit(0);
             }
         }
-                
-	// For Error
-        catch(ArrayIndexOutOfBoundsException e){
-			System.out.println("INDEX DOES NOT EXIST, Try Again!");
-		}
-		
-	}
-	
-	// Ask User to continue to rent or Stop
-	public static void stop_Or_Continue(String answer){
-		String a = answer; 
-		
-		if(a.equals("Y")) {
-			runMethod();
-		}else {
-			System.out.println("System Ended");
+    }
+
+    // to stop the program
+    public static void stop_Or_Continue(String answer) {
+        String a = answer;
+
+        if (a.equalsIgnoreCase("Y")) {
+            
+        } else {
+            System.out.println("System Ended");
             System.exit(0);
-		}
-			
-	}
-   
+        }
+    }
 }
