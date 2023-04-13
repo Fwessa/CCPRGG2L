@@ -63,8 +63,11 @@ public class BookRental {
                     if (rentedSuccessfully) {
                         System.out.println("You Rented " + booksSelection[bookIndex]);
                     }
+                    
+                    // Additional Notif for the user if they inputed wrong
+                   
                 } else{
-                    System.out.println("INDEX DOES NOT EXIST, Try Again!");
+                    System.out.println("Invalid Input");
                     System.exit(0);
                 }
             
