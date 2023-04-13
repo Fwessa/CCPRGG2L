@@ -1,3 +1,4 @@
+
 // Luisa T. Dala
 // INF224
 
@@ -12,9 +13,8 @@ public class BookRental {
         "Android Application, Corinne Hoisington",
         "Programming Concepts and Logic Formulation, Rosauro E. Manuel",
     };
-    
-    // Books Number of Coppies
-    static int[] bookCopies = {2, 3, 4}; 
+
+    static int[] bookCopies = {0, 0, 0}; // Books Number of Coppies
 
     public static void main(String[] args) {
         runMethod();
@@ -22,8 +22,21 @@ public class BookRental {
 
     // Runner
 	public static void runMethod() {
+        int inventory = 0;
+        
+        // books counter
+        for(int i: bookCopies){
+            inventory +=i;
+        }
 
-    System.out.println("");
+        // if there's no more books left
+        if(inventory <= 0){
+            System.out.println("");
+            System.out.println("No more books to rent!");
+            System.exit(0);
+        }
+
+        System.out.println("");
 		System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
 		System.out.println("*****************************");
 		System.out.println("0 Sytem Analysis and Design, Gary B. Shelly");
@@ -71,10 +84,11 @@ public class BookRental {
             //Stopper
     public static void stopOrContinue(String answer) {
         if (answer.equalsIgnoreCase("Y")) {
-            runMethod(); // rerun runMethod()
+            runMethod();
         } else {
             System.out.println("System Ended");
             System.exit(0);
         }
+
     }
 }
