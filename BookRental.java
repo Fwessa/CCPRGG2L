@@ -71,7 +71,7 @@ public class BookRental {
             //Stopper
     public static void stopOrContinue(String answer) {
         if (answer.equalsIgnoreCase("Y")) {
-            runMethod();
+            runMethod(); // rerun runMethod()
         } else {
             System.out.println("System Ended");
             System.exit(0);
