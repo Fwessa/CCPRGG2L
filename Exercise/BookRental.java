@@ -8,9 +8,9 @@ public class BookRental {
 
     // Number of Copies
 
-    static int book0_Copy = 2; // Book 0 Sytem Analysis and Design, Gary B. Shelly
-    static int book1_Copy = 3; // Book 1 Android Application, Corinne Hoisingto
-    static int book2_Copy = 4; // Book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
+    	static int book0_Copy = 2; // Book 0 Sytem Analysis and Design, Gary B. Shelly
+	static int book1_Copy = 3; // Book 1 Android Application, Corinne Hoisingto
+	static int book2_Copy = 4; // Book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
 	
     // Main
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class BookRental {
     // Runner
 	public static void runMethod() {
 		
-        System.out.println("");
+       		System.out.println("");
 		System.out.println("ELECTRONIC BOOK RENTAL SYSTEM");
 		System.out.println("*****************************");
 		System.out.println("0 Sytem Analysis and Design, Gary B. Shelly");
@@ -30,7 +30,7 @@ public class BookRental {
 		System.out.println("*****************************");
 		System.out.println("CHOOSE A NUMBER TO RENT YOUR FAVOURITE BOOK");
 		
-        // Scanner
+      // Scanner
 		Scanner scan = new Scanner(System.in);  
 		int bookNum = scan.nextInt();
 		askBook(bookNum); // runs askBook()
@@ -74,29 +74,29 @@ public class BookRental {
                     
                     
                 // book 1 Android Application, Corinne Hoisington
-                    if(books[x].equals("Android Application, Corinne Hoisington")) {
-                        
-                        if(book1_Copy !=0) {
-                            book1_Copy -=1; 
-                            System.out.println("");
-                            System.out.println("You Rented Sytem Analysis and Design, Gary B. Shelly");
-                            System.out.println("Rent Again? Y/N");
-                            Scanner scan = new Scanner(System.in);  
-                            String answer = scan.next();
-                            stop_Or_Continue(answer);// runs stop_Or_Continue()
-                        }
-                        
-                        else{
-                        
-                            System.out.println("");
-                            System.out.println("No Copies Available");
-                            System.out.println("Rent Again? Y/N");
-                            Scanner scan = new Scanner(System.in);  
-                            String answer = scan.next();
-                            stop_Or_Continue(answer);// runs stop_Or_Continue()
-                            
-                        }
-                    }
+		    if(books[x].equals("Android Application, Corinne Hoisington")) {
+
+			if(book1_Copy !=0) {
+			    book1_Copy -=1; 
+			    System.out.println("");
+			    System.out.println("You Rented Sytem Analysis and Design, Gary B. Shelly");
+			    System.out.println("Rent Again? Y/N");
+			    Scanner scan = new Scanner(System.in);  
+			    String answer = scan.next();
+			    stop_Or_Continue(answer);// runs stop_Or_Continue()
+			}
+
+			else{
+
+			    System.out.println("");
+			    System.out.println("No Copies Available");
+			    System.out.println("Rent Again? Y/N");
+			    Scanner scan = new Scanner(System.in);  
+			    String answer = scan.next();
+			    stop_Or_Continue(answer);// runs stop_Or_Continue()
+
+			}
+		    }
 
                     // book 2 Programming Concepts and Logic Formulation, Rosauro E. Manuel
                     if(books[x].equals("Programming Concepts and Logic Formulation, Rosauro E. Manuel")) {
@@ -125,7 +125,7 @@ public class BookRental {
             }
         }
                 
-		// For Error
+	// For Error
         catch(ArrayIndexOutOfBoundsException e){
 			System.out.println("INDEX DOES NOT EXIST, Try Again!");
 		}
