@@ -14,7 +14,7 @@ public class BookRental {
         "Programming Concepts and Logic Formulation, Rosauro E. Manuel",
     };
 
-    static int[] bookCopies = {0, 0, 0}; // Books Number of Coppies
+    static int[] bookCopies = {2, 3, 4}; // Books Number of Coppies
 
     public static void main(String[] args) {
         runMethod();
