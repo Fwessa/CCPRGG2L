@@ -1,4 +1,5 @@
-
+// Luisa T. Dala
+// INF224
 public class Book {
 
 	String name;
