@@ -235,7 +235,7 @@ public class LibraryWindow {
 
         // -------------------------- Buttons ------------------------------
 
-        JButton confirm_B = new JButton("Confirm");    // onced confirmed the gui will reset to show the new data
+        JButton confirm_B = new JButton("Confirm");  
         confirm_B.setBounds(445, 175, 100, 20);
         confirm_B.setFocusable(false);
         confirm_B .addActionListener(new ActionListener() {
