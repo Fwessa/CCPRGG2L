@@ -299,18 +299,6 @@ public class LibraryWindow {
             }
         });
     
-        // JButton logOut_B = new JButton("LogOut");
-        // logOut_B.setBounds(550, 225, 100, 20);
-        // logOut_B.setFocusable(false);
-        // logOut_B .addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e) {
-                
-        //         System.exit(0);
-
-        //     }
-        // });
-
-        // f.add(logOut_B);
         f.add(confirm_B);
         f.add(panel);
         f.add(background);
