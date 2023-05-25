@@ -1,20 +1,29 @@
+package Attendance2_Inheritance;
+
+/*	Luisa T. Dala
+ *  INF 224
+ *  Date: 25/05/2023
+ *  
+ *  This is the superclass Vehicle
+ *  This class represents the attributes of the different means of transportation, including speed, color, price, and stop().
+ *  
+ */
+
 
 public class Vehicle {
 	
-	
-		String name; 
-	 	int speed;
-	    String color;
-	    double price;
+	 	int speed; // This represents the speed of the vehicle
+	    String color;  // This represents the color of the vehicle
+	    double price;  // This represents the price  of the vehicle
 
-	    public Vehicle(String name, int speed, String color, double price) {
-	        this.name = name;
+	    public Vehicle(int speed, String color, double price) {
 	    	this.speed = speed;
 	        this.color = color;
 	        this.price = price;
 	    }
-
-	    public void stop() {
+	    
+	    // This method stops the vehicle 
+		public void stop() {
 	        System.out.println("Vehicle stopped.");
 	    }
 
