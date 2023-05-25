@@ -1,6 +1,6 @@
 package Attendance2_Inheritance;
 
-/*	Luisa T. Dala
+/*  Luisa T. Dala
  *  INF 224
  *  Date: 25/05/2023
  *  
@@ -12,7 +12,7 @@ package Attendance2_Inheritance;
 
 public class Vehicle {
 	
-	 	int speed; // This represents the speed of the vehicle
+	    int speed; // This represents the speed of the vehicle
 	    String color;  // This represents the color of the vehicle
 	    double price;  // This represents the price  of the vehicle
 
