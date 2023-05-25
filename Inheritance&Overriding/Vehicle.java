@@ -23,7 +23,7 @@ public class Vehicle {
 	    }
 	    
 	    // This method stops the vehicle 
-		public void stop() {
+	    public void stop() {
 	        System.out.println("Vehicle stopped.");
 	    }
 
