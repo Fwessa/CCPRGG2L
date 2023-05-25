@@ -1,35 +1,65 @@
+package Attendance2_Inheritance;
+
+
+/*	Luisa T. Dala
+ *  INF 224
+ *  Date: 25/05/2023
+ *  
+ *  This runs the program. 
+ */
+
 
 public class Main {
 	
+	
 	public static void main(String[] args) {
-		Car car = new Car("Toyota-Vios",170, "Red", 18010.92);
-		Plane plane = new Plane("U-2",528, "Blue", 120000000.00);
-		Boat boat = new Boat("Fandago Yacht", 18, "White", 545000.00);
 		
-		System.out.println("Car");
-		System.out.println(car.name);
-		System.out.println("Speed: "+car.speed+"kmph");
-		System.out.println("Color: " + car.color);
-		System.out.println("Price: $"+car.price );
-		car.stop();
+		// Create new instances for each subclasses. 
+		Toyota_Vios toyotaV = new Toyota_Vios(170, "Red","All-Season Tires", 18010.92); 
+		U2_SpyPLane spyPlane = new U2_SpyPLane(528, "Blue",103, 120000000.00);
+		Fandago_Yacht FandagoY = new Fandago_Yacht( 18, "White", "Red", 545000.00);
+		
+		
+		// Prints Toyota Vios information
+		System.out.println("Toyota Vios");
+		System.out.println("Speed: "+toyotaV.speed+"kmph");
+		System.out.println("Color: " + toyotaV.color);
+		System.out.println("Tire Type: " + toyotaV.tireType);
+		System.out.println("Price: $"+toyotaV.price );
+		
+		// Perform actions on the ToyotaVios instance
+		toyotaV .drive();
+		toyotaV .stop(); // Call the stop method specific to ToyotaVios
+		
 		
 		System.out.println();
 		
-		System.out.println("Plane");
-		System.out.println(plane.name);
-		System.out.println("Speed: "+plane.speed+"mph");
-		System.out.println("Color: " +plane.color);
-		System.out.println("Price: $"+plane.price);
-		plane.stop();
+		
+		// Prints U-2 Spy Plane information
+		System.out.println("U-2 Spy Plane");
+		System.out.println("Speed: "+spyPlane.speed+"mph");
+		System.out.println("Color: " +spyPlane.color);
+		System.out.println("Wing Span: " + spyPlane.wingSpan +"feet");
+		System.out.println("Price: $"+spyPlane.price);
+		
+		// Perform actions on the U2 Spy Plane instance
+		spyPlane.fly();
+		spyPlane.stop();// Call the stop method specific to U2 Spy Plane
+		
 		
 		System.out.println();
 		
-		System.out.println("Boat");
-		System.out.println(boat.name);
-		System.out.println("Speed: "+boat.speed+"kn");
-		System.out.println("Color: " +boat.color);
-		System.out.println("Price: $"+boat.price);
-		boat.stop();
+		
+		// Prints Fandago Yacht information
+		System.out.println("Fandago Yacht");
+		System.out.println("Speed: "+FandagoY.speed+"kn");
+		System.out.println("Color: " +FandagoY.color);
+		System.out.println("Main Sail Color: " + FandagoY.mainSailColor);
+		System.out.println("Price: $"+FandagoY.price);
+		
+		// Perform actions on the Fandago Yacht instance
+		FandagoY.float_();
+		FandagoY.stop(); // Call the stop method specific to Fandago Yacht
 		
 	}
 }
