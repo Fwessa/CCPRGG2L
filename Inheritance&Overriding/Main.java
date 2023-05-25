@@ -1,7 +1,7 @@
 package Attendance2_Inheritance;
 
 
-/*	Luisa T. Dala
+/*  Luisa T. Dala
  *  INF 224
  *  Date: 25/05/2023
  *  
